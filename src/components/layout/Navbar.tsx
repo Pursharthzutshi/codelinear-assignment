@@ -153,95 +153,80 @@ export default function Navbar() {
           >
             <div className="flex flex-col h-full pt-[120px] px-8 pb-12 justify-start">
               <nav style={{padding:"20px"}} className="flex flex-col gap-4" aria-label="Mobile navigation">
-                {navLinks.map((link) => (
-                  <div key={link.label} className="border-b animate-none" style={{ borderColor: 'rgba(255,255,255,0.06)' }}>
-                    {link.hasDropdown ? (
-                      <button
-                        className="flex items-center justify-between text-[14px] uppercase tracking-[0.1em] font-medium py-3 w-full text-left text-white"
-                        onClick={() => setMobileDropdown(mobileDropdown === link.label ? null : link.label)}
-                      >
-                        {link.label}
-                        <motion.span
-                          animate={{ rotate: mobileDropdown === link.label ? 180 : 0 }}
-                          transition={{ duration: 0.2 }}
-                          className="flex items-center"
-                        >
-                          <ChevronDown size={18} className="opacity-70" />
-                        </motion.span>
-                      </button>
-                    ) : (
+                {/* SOLUTIONS */}
+                <div className="border-b animate-none" style={{ borderColor: 'rgba(255,255,255,0.06)' }}>
+                  <button
+                    type="button"
+                    className="flex items-center justify-between text-[14px] uppercase tracking-[0.1em] font-medium py-3 w-full text-left text-white"
+                    onClick={() => setMobileDropdown(mobileDropdown === 'SOLUTIONS' ? null : 'SOLUTIONS')}
+                  >
+                    SOLUTIONS
+                    <motion.span
+                      animate={{ rotate: mobileDropdown === 'SOLUTIONS' ? 180 : 0 }}
+                      transition={{ duration: 0.2 }}
+                      className="flex items-center"
+                    >
+                      <ChevronDown size={18} className="opacity-70" />
+                    </motion.span>
+                  </button>
+                  <div 
+                    className={`overflow-hidden transition-all duration-300 ease-in-out flex flex-col gap-2 pl-4 ${
+                      mobileDropdown === 'SOLUTIONS' ? 'max-h-[600px] opacity-100 pb-4' : 'max-h-0 opacity-0'
+                    }`}
+                  >
+                    {solutionsLinks.map((item) => (
                       <a
-                        href={link.href}
-                        className="flex items-center justify-between text-[14px] uppercase tracking-[0.1em] font-medium py-3 text-white block"
-                        onClick={() => setMobileOpen(false)}
+                        key={item}
+                        href="#solutions"
+                        onClick={() => {
+                          setMobileDropdown(null);
+                          setMobileOpen(false);
+                        }}
+                        className="text-[15px] text-white/70 hover:text-white py-3 whitespace-pre-line text-left block"
                       >
-                        {link.label}
+                        {item.replace('\n', ' ')}
                       </a>
-                    )}
-
-                    {/* Submenu Accordion */}
-                    <AnimatePresence>
-                      {link.hasDropdown && mobileDropdown === link.label && (
-                        <motion.div
-                          initial={{ height: 0, opacity: 0 }}
-                          animate={{ height: "auto", opacity: 1 }}
-                          exit={{ height: 0, opacity: 0 }}
-                          transition={{ duration: 0.2 }}
-                          className="overflow-hidden flex flex-col gap-2 pl-4 pb-4"
-                        >
-                          {link.label === 'SOLUTIONS' ? (
-                            solutionsLinks.map((item) => (
-                              <a
-                                key={item}
-                                href="#solutions"
-                                onClick={() => {
-                                  setMobileDropdown(null);
-                                  setMobileOpen(false);
-                                }}
-                                className="text-[15px] text-white/70 hover:text-white py-3 whitespace-pre-line text-left block"
-                              >
-                                {item.replace('\n', ' ')}
-                              </a>
-                            ))
-                          ) : (
-                            <>
-                              <a
-                                href="#resources"
-                                onClick={() => {
-                                  setMobileDropdown(null);
-                                  setMobileOpen(false);
-                                }}
-                                className="text-[15px] text-white/70 hover:text-white py-3 text-left block"
-                              >
-                                Fintech Insights
-                              </a>
-                              <a
-                                href="#case-studies"
-                                onClick={() => {
-                                  setMobileDropdown(null);
-                                  setMobileOpen(false);
-                                }}
-                                className="text-[15px] text-white/70 hover:text-white py-3 text-left block"
-                              >
-                                Case Studies
-                              </a>
-                              <a
-                                href="#company"
-                                onClick={() => {
-                                  setMobileDropdown(null);
-                                  setMobileOpen(false);
-                                }}
-                                className="text-[15px] text-white/70 hover:text-white py-3 text-left block"
-                              >
-                                Core Team
-                              </a>
-                            </>
-                          )}
-                        </motion.div>
-                      )}
-                    </AnimatePresence>
+                    ))}
                   </div>
-                ))}
+                </div>
+
+                {/* RESOURCES */}
+                <div className="border-b animate-none" style={{ borderColor: 'rgba(255,255,255,0.06)' }}>
+                  <button
+                    type="button"
+                    className="flex items-center justify-between text-[14px] uppercase tracking-[0.1em] font-medium py-3 w-full text-left text-white"
+                    onClick={() => setMobileDropdown(mobileDropdown === 'RESOURCES' ? null : 'RESOURCES')}
+                  >
+                    RESOURCES
+                    <motion.span
+                      animate={{ rotate: mobileDropdown === 'RESOURCES' ? 180 : 0 }}
+                      transition={{ duration: 0.2 }}
+                      className="flex items-center"
+                    >
+                      <ChevronDown size={18} className="opacity-70" />
+                    </motion.span>
+                  </button>
+                  <div 
+                    className={`overflow-hidden transition-all duration-300 ease-in-out flex flex-col gap-2 pl-4 ${
+                      mobileDropdown === 'RESOURCES' ? 'max-h-[600px] opacity-100 pb-4' : 'max-h-0 opacity-0'
+                    }`}
+                  >
+                    <a href="#resources" onClick={() => { setMobileDropdown(null); setMobileOpen(false); }} className="text-[15px] text-white/70 hover:text-white py-3 text-left block">Fintech Insights</a>
+                    <a href="#case-studies" onClick={() => { setMobileDropdown(null); setMobileOpen(false); }} className="text-[15px] text-white/70 hover:text-white py-3 text-left block">Case Studies</a>
+                    <a href="#company" onClick={() => { setMobileDropdown(null); setMobileOpen(false); }} className="text-[15px] text-white/70 hover:text-white py-3 text-left block">Core Team</a>
+                  </div>
+                </div>
+
+                {/* ABOUT US */}
+                <div className="border-b animate-none" style={{ borderColor: 'rgba(255,255,255,0.06)' }}>
+                  <a
+                    href="#company"
+                    className="flex items-center justify-between text-[14px] uppercase tracking-[0.1em] font-medium py-3 text-white block"
+                    onClick={() => setMobileOpen(false)}
+                  >
+                    ABOUT US
+                  </a>
+                </div>
                 <div className="mt-8">
                   <a
                     href="#demo"
