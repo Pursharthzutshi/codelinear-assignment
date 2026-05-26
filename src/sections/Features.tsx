@@ -25,10 +25,10 @@ export default function Features() {
       style={{ background: 'var(--bg-dark-main)' }}
     >
       <div className="container mx-auto max-w-[1200px]">
-        <div className="grid grid-cols-1 lg:grid-cols-[380px_1fr] gap-12 lg:gap-20">
+        <div className="flex flex-col lg:flex-row gap-12 lg:gap-20">
 
           {/* LEFT */}
-          <div className="flex flex-col gap-8 text-center lg:text-left items-center lg:items-start">
+          <div className="lg:w-[380px] lg:shrink-0 flex flex-col gap-8 text-center lg:text-left items-center lg:items-start">
             <h2 className="text-white leading-tight">
               All of our solutions are tailor-made to your needs
             </h2>
@@ -40,7 +40,7 @@ export default function Features() {
             variants={containerVariants}
             initial="hidden"
             animate={inView ? 'visible' : 'hidden'}
-            className="grid grid-cols-1 sm:grid-cols-2 gap-10 sm:gap-12"
+            className="flex-1 grid grid-cols-1 sm:grid-cols-2 gap-10 sm:gap-12"
           >
             {features.map((feature) => (
               <motion.div

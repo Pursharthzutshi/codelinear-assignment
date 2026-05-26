@@ -26,9 +26,9 @@ export default function Footer() {
           <div className="w-full lg:w-[65%] flex flex-col gap-12 lg:gap-16 mt-4 lg:mt-0">
 
             {/* Locations */}
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 text-center sm:text-left">
+            <div className="flex flex-col sm:flex-row gap-8 text-center sm:text-left">
               {locations.map((loc, idx) => (
-                <div key={idx} className="flex flex-col gap-3 items-center sm:items-start">
+                <div key={idx} className="flex-1 flex flex-col gap-3 items-center sm:items-start">
                   <h4 className="text-white text-[15px] font-light">{loc.city}</h4>
                   <p className="text-[#8A9BB5] text-[13px] leading-[1.6] whitespace-pre-line">
                     {loc.address}
@@ -38,9 +38,9 @@ export default function Footer() {
             </div>
 
             {/* Links */}
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 text-center sm:text-left">
+            <div className="flex flex-col sm:flex-row gap-8 text-center sm:text-left">
               {/* Solutions */}
-              <div className="flex flex-col gap-5 items-center sm:items-start">
+              <div className="flex-1 flex flex-col gap-5 items-center sm:items-start">
                 <h4 className="text-white text-[15px] font-light">Solutions</h4>
                 <div className="flex flex-col gap-3 w-[200px] sm:w-full">
                   {solutionsLinks.map((link, idx) => (
@@ -55,7 +55,7 @@ export default function Footer() {
               </div>
 
               {/* N7 Banking */}
-              <div className="flex flex-col gap-5 items-center sm:items-start">
+              <div className="flex-1 flex flex-col gap-5 items-center sm:items-start">
                 <h4 className="text-white text-[15px] font-light">N7 Banking</h4>
                 <div className="flex flex-col gap-3 w-[200px] sm:w-full">
                   {n7BankingLinks.map((link, idx) => (
@@ -70,7 +70,7 @@ export default function Footer() {
               </div>
 
               {/* Our Socials */}
-              <div className="flex flex-col gap-5 items-center sm:items-start col-span-1">
+              <div className="flex-1 flex flex-col gap-5 items-center sm:items-start">
                 <h4 className="text-white text-[15px] font-light">Our Socials</h4>
                 <div className="flex flex-col gap-3 w-[200px] sm:w-full">
                   {socialsLinks.map((link, idx) => (

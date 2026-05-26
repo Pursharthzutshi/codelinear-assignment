@@ -64,7 +64,7 @@ export default function Navbar() {
                       className="absolute left-1/2 -translate-x-1/2 top-full mt-2 w-[320px] bg-[#182029]/95 border border-[rgba(255,255,255,0.08)] backdrop-blur-md rounded-xl shadow-2xl p-5 z-50 flex flex-col gap-2"
                     >
                       {link.label === 'SOLUTIONS' ? (
-                        <div style={{padding: '10px'}}  className="grid grid-cols-1 gap-2">
+                        <div style={{padding: '10px'}}  className="flex flex-col gap-2">
                           {solutionsLinks.map((item) => (
                             <a
                               key={item}
@@ -77,7 +77,7 @@ export default function Navbar() {
                           ))}
                         </div>
                       ) : (
-                        <div style={{padding: '10px'}} className="grid grid-cols-1 gap-2">
+                        <div style={{padding: '10px'}} className="flex flex-col gap-2">
                           <a
                             href="#resources"
                             onClick={() => setActiveDropdown(null)}
