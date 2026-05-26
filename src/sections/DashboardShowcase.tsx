@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { CheckCircle2 } from 'lucide-react'
+import { Check } from 'lucide-react'
 import analyticsChart from '../assets/images/charts/analytics_chart.png'
 import portfolioChart from '../assets/images/charts/portfolio_chart.png'
 import PrimaryButton from '../components/ui/PrimaryButton'
@@ -77,9 +77,9 @@ export default function DashboardShowcase() {
                 transition={{ duration: 0.7, ease: 'easeOut' }}
                 className="flex flex-col gap-5 w-full lg:w-1/2"
               >
-                <h2 className="text-[32px] sm:text-[40px] lg:text-[46px] font-light text-white leading-[1.1] tracking-tight relative z-10">
+                <h3 className="text-[3px] sm:text-[40px] lg:text-[46px] font-light text-white leading-[1.1] tracking-tight relative z-10">
                   {item.title}
-                </h2>
+                </h3>
 
                 {item.description && (
                   <p className="text-[14px] sm:text-[15px] leading-relaxed" style={{ color: '#8A9BB5' }}>
@@ -92,16 +92,30 @@ export default function DashboardShowcase() {
                 )}
 
                 {item.points && item.points.length > 0 && (
-                  <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-3 mt-1">
-                    {item.points.map((point, idx) => (
-                      <li key={idx} className="flex items-start gap-3">
-                        <div className="w-[18px] h-[18px] rounded-full bg-[#03B4FD] flex items-center justify-center flex-shrink-0 mt-[3px]">
-                          <CheckCircle2 size={11} color="white" strokeWidth={3} />
-                        </div>
-                        <span className="text-[#8A9BB5] text-[13px] leading-[1.5]">{point}</span>
-                      </li>
-                    ))}
-                  </ul>
+                  <div className="flex flex-col sm:flex-row gap-x-6 gap-y-3 mt-1">
+                    {/* Left Column */}
+                    <ul className="flex flex-col gap-3 w-full sm:w-1/2">
+                      {item.points.filter((_, i) => i % 2 === 0).map((point, idx) => (
+                        <li key={`left-${idx}`} className="flex items-start gap-3">
+                          <div className="w-[18px] h-[18px] rounded-full bg-[#0066FF] flex items-center justify-center flex-shrink-0 mt-[3px]">
+                            <Check size={11} color="white" strokeWidth={3} />
+                          </div>
+                          <span className="text-[#8A9BB5] text-[13px] leading-[1.5]">{point}</span>
+                        </li>
+                      ))}
+                    </ul>
+                    {/* Right Column */}
+                    <ul className="flex flex-col gap-3 w-full sm:w-1/2 mt-3 sm:mt-0">
+                      {item.points.filter((_, i) => i % 2 !== 0).map((point, idx) => (
+                        <li key={`right-${idx}`} className="flex items-start gap-3">
+                          <div className="w-[18px] h-[18px] rounded-full bg-[#0066FF] flex items-center justify-center flex-shrink-0 mt-[3px]">
+                            <Check size={11} color="white" strokeWidth={3} />
+                          </div>
+                          <span className="text-[#8A9BB5] text-[13px] leading-[1.5]">{point}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
                 )}
 
                 {item.hasButtons !== false && (
