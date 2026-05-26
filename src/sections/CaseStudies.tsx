@@ -11,7 +11,7 @@ export default function CaseStudies() {
   return (
     <section id="case-studies" className="section-py relative overflow-hidden" style={{ background: 'var(--bg-dark-main)' }}>
       <div className="container mx-auto max-w-[1200px] mb-10 text-center">
-        <h2 className="text-white font-medium tracking-tight">
+        <h2 className="text-white font-light tracking-tight">
           Our Case Studies
         </h2>
         <br></br>
@@ -32,7 +32,7 @@ export default function CaseStudies() {
             <span className="text-[#03B4FD] text-[11px] font-bold tracking-[0.15em] uppercase">
               {active.tag}
             </span>
-            <h3 className="text-white text-[24px] leading-[1.2] font-medium">
+            <h3 className="text-white text-[24px] leading-[1.2] font-light">
               {active.title}
             </h3>
             <div className="flex items-center gap-3">
@@ -48,26 +48,43 @@ export default function CaseStudies() {
         </div>
 
         {/* Mobile Nav */}
-        <div className="flex items-center justify-center gap-6 mt-8">
-          <button
-            onClick={handlePrev}
-            className="w-10 h-10 rounded-full border border-[#03B4FD] flex items-center justify-center text-[#03B4FD] hover:bg-[#03B4FD] hover:text-white transition-colors"
-          >
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-              <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
-            </svg>
-          </button>
-          <a href="#" className="text-[#03B4FD] text-[12px] font-bold tracking-[0.1em] uppercase hover:text-white transition-colors">
+        <div className="flex flex-col items-center gap-6 mt-8">
+          <div className="flex items-center justify-center gap-6 w-full">
+            <button
+              onClick={handlePrev}
+              className="w-10 h-10 rounded-full border border-[#03B4FD] flex items-center justify-center text-[#03B4FD] hover:bg-[#03B4FD] hover:text-white transition-colors"
+            >
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+              </svg>
+            </button>
+            
+            {/* Indicators */}
+            <div className="flex items-center gap-2 mx-2">
+              {caseStudiesData.map((_, idx) => (
+                <button
+                  key={idx}
+                  className={`h-[12px] rounded-full transition-all duration-300 ${
+                    idx === activeIndex
+                      ? 'w-[38px] bg-[#0B4B63]'
+                      : 'w-[12px] border border-[#0B4B63]'
+                  }`}
+                />
+              ))}
+            </div>
+
+            <button
+              onClick={handleNext}
+              className="w-10 h-10 rounded-full border border-[#03B4FD] flex items-center justify-center text-[#03B4FD] hover:bg-[#03B4FD] hover:text-white transition-colors"
+            >
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+              </svg>
+            </button>
+          </div>
+          <a href="#" className="text-[#03B4FD] text-[12px] font-bold tracking-[0.1em] uppercase hover:text-white transition-colors mt-2">
             View All →
           </a>
-          <button
-            onClick={handleNext}
-            className="w-10 h-10 rounded-full border border-[#03B4FD] flex items-center justify-center text-[#03B4FD] hover:bg-[#03B4FD] hover:text-white transition-colors"
-          >
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-              <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
-            </svg>
-          </button>
         </div>
       </div>
 
@@ -116,7 +133,7 @@ export default function CaseStudies() {
                     <span className="text-[#03B4FD] text-[11px] font-bold tracking-[0.15em] uppercase mb-4 block">
                       {study.tag}
                     </span>
-                    <h3 className="text-white text-[28px] leading-[1.2] font-medium mb-8">
+                    <h3 className="text-white text-[28px] leading-[1.2] font-light mb-8">
                       {study.title}
                     </h3>
                     <div className="flex items-center gap-3 mb-auto">
@@ -147,6 +164,23 @@ export default function CaseStudies() {
                   <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
                 </svg>
               </button>
+              
+              {/* Indicators */}
+              <div className="flex items-center gap-2 mx-4">
+                {caseStudiesData.map((_, idx) => (
+                  <button
+                    key={idx}
+                    // If you want them clickable: onClick={() => setActiveIndex(idx)} 
+                    // (But useCarousel hook might not expose setActiveIndex yet, so just decorative for now)
+                    className={`h-[12px] rounded-full transition-all duration-300 ${
+                      idx === activeIndex
+                        ? 'w-[38px] bg-[#0B4B63]'
+                        : 'w-[12px] border border-[#0B4B63]'
+                    }`}
+                  />
+                ))}
+              </div>
+
               <button
                 onClick={handleNext}
                 className="w-10 h-10 rounded-full border border-[#03B4FD] flex items-center justify-center text-[#03B4FD] hover:bg-[#03B4FD] hover:text-white transition-colors"

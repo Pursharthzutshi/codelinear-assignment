@@ -9,8 +9,8 @@ import SecondaryButton from '../components/ui/SecondaryButton'
 export default function MobileSection() {
   return (
     <section
-      id="mobile-section"
-      className="relative sm:pb-20 overflow-hidden"
+      id="company"
+      className="relative sm:pb-20 overflow-hidden scroll-mt-28"
       style={{ background: '#F4F8FB',padding:"42px 2px 2px 2px"}}
     >
 
@@ -55,7 +55,7 @@ export default function MobileSection() {
           </div>
 
           <div className="flex flex-col justify-center order-3 md:order-none lg:pl-8 justify-self-end w-full max-w-[380px] items-center md:items-start text-center md:text-left">
-            <h3 style={{color:"black"}} className="text-lg font-bold text-[var(--text-inverse)] mb-3">{mobileFeatures[0].title}</h3>
+            <h3 style={{color:"black"}} className="text-lg font-light text-[var(--text-inverse)] mb-3">{mobileFeatures[0].title}</h3>
             <p className="text-[#4A5D73] text-[13px] leading-relaxed mb-6">{mobileFeatures[0].desc}</p>
             <div className="flex flex-col gap-4 w-full items-center md:items-start">
               {mobileFeatures[0].points.map(pt => (
@@ -73,7 +73,7 @@ export default function MobileSection() {
           <div className="hidden md:block order-4 md:order-none"></div>
 
           <div className="flex flex-col justify-center order-5 md:order-none mx-auto md:mx-0 w-full max-w-[380px] items-center md:items-start text-center md:text-left mt-8 md:mt-0">
-            <h3 style={{color:"black"}} className="text-lg font-bold text-[var(--text-inverse)] mb-3">{mobileFeatures[1].title}</h3>
+            <h3 style={{color:"black"}} className="text-lg font-light text-[var(--text-inverse)] mb-3">{mobileFeatures[1].title}</h3>
             <p className="text-[#4A5D73] text-[13px] leading-relaxed mb-6">{mobileFeatures[1].desc}</p>
             <div className="flex flex-col gap-4 w-full items-center md:items-start">
               {mobileFeatures[1].points.map(pt => (
@@ -99,7 +99,7 @@ export default function MobileSection() {
           </div>
 
           <div className="flex flex-col justify-center order-9 md:order-none lg:pl-8 justify-self-end w-full max-w-[380px] items-center md:items-start text-center md:text-left mt-8 md:mt-0">
-            <h3 style={{color:"black"}} className="text-lg font-bold text-[var(--text-inverse)] mb-3">{mobileFeatures[2].title}</h3>
+            <h3 style={{color:"black"}} className="text-lg font-light text-[var(--text-inverse)] mb-3">{mobileFeatures[2].title}</h3>
             <p className="text-[#4A5D73] text-[13px] leading-relaxed mb-6">{mobileFeatures[2].desc}</p>
             <div className="flex flex-col gap-4 w-full items-center md:items-start">
               {mobileFeatures[2].points.map(pt => (
@@ -133,7 +133,7 @@ export default function MobileSection() {
           </div>
 
           <div className="flex flex-col gap-6 max-w-[500px] relative z-10 items-center md:items-start text-center md:text-left">
-            <h2 className="text-2xl md:text-[42px] font-medium text-white leading-[1.1] tracking-tight">
+            <h2 className="text-2xl md:text-[42px] font-light text-white leading-[1.1] tracking-tight">
               Take the full advantage of going paper-less now.
             </h2>
             <p className="text-[#8A9BB5] text-[15px] leading-relaxed">

@@ -10,7 +10,7 @@ export default function CTABanner() {
         >
           {/* Left Content */}
           <div className="flex flex-col gap-4 md:max-w-[55%]">
-            <h2 className="text-white text-[28px] sm:text-[36px] leading-[1.2] font-medium tracking-tight">
+            <h2 className="text-white text-[28px] sm:text-[36px] leading-[1.2] font-light tracking-tight">
               Take the full advantage of<br className="hidden sm:block" /> going paper-less now.
             </h2>
             <p className="text-[#8A9BB5] text-[14px] sm:text-[15px] leading-relaxed">

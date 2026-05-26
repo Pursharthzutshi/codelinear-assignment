@@ -6,7 +6,7 @@ import { newsData } from '../data/sections-data'
 
 export default function NewsSection() {
   return (
-    <section className="section-py" style={{ background: 'var(--bg-dark-main)' }}>
+    <section id="resources" className="section-py scroll-mt-28" style={{ background: 'var(--bg-dark-main)' }}>
       <div className="container mx-auto max-w-[1200px]">
 
         <div className="flex flex-col lg:flex-row justify-between gap-12 lg:gap-8">
@@ -14,7 +14,7 @@ export default function NewsSection() {
           {/* Left Column */}
           <div className="flex flex-col items-start gap-8 lg:w-[38%] lg:pr-8 pt-2">
             <h3 className="text-white leading-tight">
-              Get yourself up-to-speed on all the things happening in fintech
+              Get yourself up-to-speed on <br></br> all the things happening in fintech
             </h3>
             <SecondaryButton
               label="INSIGHTS"
@@ -49,7 +49,7 @@ export default function NewsSection() {
                     <span className="text-[#03B4FD] text-[10px] font-mono tracking-[0.1em] uppercase">
                       {item.tag}
                     </span>
-                    <h4 className="text-white text-[16px] font-medium leading-snug">{item.title}</h4>
+                    <h4 className="text-white text-[16px] font-light leading-snug">{item.title}</h4>
                     <div className="flex items-center gap-4 text-[#8A9BB5] text-[11px] tracking-wide">
                       <span>{item.author}</span>
                       <span>{item.date}</span>
@@ -77,7 +77,7 @@ export default function NewsSection() {
                     <span className="text-[#03B4FD] text-[10px] font-mono tracking-[0.1em] uppercase">
                       {item.tag}
                     </span>
-                    <h4 className="text-white text-[15px] font-medium leading-snug">{item.title}</h4>
+                    <h4 className="text-white text-[15px] font-light leading-snug">{item.title}</h4>
                     <div className="flex items-center gap-4 text-[#8A9BB5] text-[11px] tracking-wide">
                       <span>{item.author}</span>
                       <span>{item.date}</span>

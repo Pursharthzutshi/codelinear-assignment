@@ -45,7 +45,7 @@ export default function DashboardShowcase() {
   return (
     <section
       id="solutions"
-      className="section-py section-border"
+      className="section-py section-border scroll-mt-28"
       style={{ background: 'var(--bg-dark-main)' }}
     >
       <div className="container mx-auto max-w-[1200px]">
@@ -53,8 +53,8 @@ export default function DashboardShowcase() {
           {showcases.map((item) => (
             <div
               key={item.id}
-              className={`grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-center relative ${
-                item.imageLeft ? 'lg:[&>*:first-child]:order-2 lg:[&>*:last-child]:order-1' : ''
+              className={`flex flex-col gap-10 lg:gap-20 items-center relative ${
+                item.imageLeft ? 'lg:flex-row-reverse' : 'lg:flex-row'
               }`}
             >
               {/* CB7 Watermark */}
@@ -75,9 +75,9 @@ export default function DashboardShowcase() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true, margin: '-80px' }}
                 transition={{ duration: 0.7, ease: 'easeOut' }}
-                className="flex flex-col gap-5"
+                className="flex flex-col gap-5 w-full lg:w-1/2"
               >
-                <h2 className="text-[32px] sm:text-[40px] lg:text-[46px] font-medium text-white leading-[1.1] tracking-tight relative z-10">
+                <h2 className="text-[32px] sm:text-[40px] lg:text-[46px] font-light text-white leading-[1.1] tracking-tight relative z-10">
                   {item.title}
                 </h2>
 
@@ -88,7 +88,7 @@ export default function DashboardShowcase() {
                 )}
 
                 {item.listTitle && (
-                  <h4 className="text-white text-[15px] font-medium mt-1">{item.listTitle}</h4>
+                  <h4 className="text-white text-[15px] font-light mt-1">{item.listTitle}</h4>
                 )}
 
                 {item.points && item.points.length > 0 && (
@@ -122,7 +122,7 @@ export default function DashboardShowcase() {
                 whileInView={{ opacity: 1, x: 0, scale: 1 }}
                 viewport={{ once: true, margin: '-80px' }}
                 transition={{ duration: 0.7, ease: 'easeOut', delay: 0.1 }}
-                className="relative"
+                className="relative w-full lg:w-1/2 lg:-mr-12"
               >
                 <div
                   className="absolute inset-0 rounded-2xl pointer-events-none"
@@ -132,19 +132,15 @@ export default function DashboardShowcase() {
                     transform: 'scale(1.05)',
                   }}
                 />
-                <div
-                  className="relative flex items-center justify-center lg:-mr-12"
+                <img
+                  src={item.image}
+                  alt={item.imageAlt}
+                  loading="lazy"
+                  className="w-full h-auto object-contain rounded-[8px] relative z-10"
                   style={{
                     boxShadow: `0 30px 60px rgba(0,0,0,0.4), 0 0 40px ${item.color}15`,
                   }}
-                >
-                  <img
-                    src={item.image}
-                    alt={item.imageAlt}
-                    loading="lazy"
-                    className="w-full h-auto object-contain rounded-[8px]"
-                  />
-                </div>
+                />
               </motion.div>
             </div>
           ))}

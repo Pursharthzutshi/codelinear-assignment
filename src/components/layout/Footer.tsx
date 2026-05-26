@@ -29,7 +29,7 @@ export default function Footer() {
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 text-center sm:text-left">
               {locations.map((loc, idx) => (
                 <div key={idx} className="flex flex-col gap-3 items-center sm:items-start">
-                  <h4 className="text-white text-[15px] font-medium">{loc.city}</h4>
+                  <h4 className="text-white text-[15px] font-light">{loc.city}</h4>
                   <p className="text-[#8A9BB5] text-[13px] leading-[1.6] whitespace-pre-line">
                     {loc.address}
                   </p>
@@ -41,7 +41,7 @@ export default function Footer() {
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 text-center sm:text-left">
               {/* Solutions */}
               <div className="flex flex-col gap-5 items-center sm:items-start">
-                <h4 className="text-white text-[15px] font-medium">Solutions</h4>
+                <h4 className="text-white text-[15px] font-light">Solutions</h4>
                 <div className="flex flex-col gap-3 w-[200px] sm:w-full">
                   {solutionsLinks.map((link, idx) => (
                     <a key={idx} href="#" className="flex justify-between items-start group">
@@ -56,7 +56,7 @@ export default function Footer() {
 
               {/* N7 Banking */}
               <div className="flex flex-col gap-5 items-center sm:items-start">
-                <h4 className="text-white text-[15px] font-medium">N7 Banking</h4>
+                <h4 className="text-white text-[15px] font-light">N7 Banking</h4>
                 <div className="flex flex-col gap-3 w-[200px] sm:w-full">
                   {n7BankingLinks.map((link, idx) => (
                     <a key={idx} href="#" className="flex justify-between items-center group">
@@ -71,7 +71,7 @@ export default function Footer() {
 
               {/* Our Socials */}
               <div className="flex flex-col gap-5 items-center sm:items-start col-span-1">
-                <h4 className="text-white text-[15px] font-medium">Our Socials</h4>
+                <h4 className="text-white text-[15px] font-light">Our Socials</h4>
                 <div className="flex flex-col gap-3 w-[200px] sm:w-full">
                   {socialsLinks.map((link, idx) => (
                     <a key={idx} href="#" className="flex justify-between items-center group">
@@ -89,7 +89,7 @@ export default function Footer() {
         </div>
 
         {/* Copyright */}
-        <div className="flex justify-center items-center border-t" style={{ borderColor: 'rgba(255,255,255,0.06)' }}>
+        <div className="flex justify-center items-center " style={{ borderColor: 'rgba(255,255,255,0.06)' ,paddingTop: '34px',}}>
           <p className="text-center text-[11px] text-[#8A9BB5] leading-relaxed">
             Copyright © 2022 by Linktia Infosystems Limited — [CB7 and N7 as Commercial Brand] —{' '}
             <br className="hidden sm:block" />
