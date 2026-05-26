@@ -12,7 +12,8 @@ import Header from './sections/Header'
 
 function App() {
   return (
-    <div className="min-h-screen" style={{ background: 'var(--bg-dark-main)' }}>
+    <div className="min-h-screen w-full overflow-x-hidden relative" style={{ background: 'var(--bg-dark-main)' }}>
+      <br></br>
       <Navbar />
       <main>
         <Header />
